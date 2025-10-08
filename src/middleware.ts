@@ -35,6 +35,32 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
+  // Define valid routes that should not be redirected
+  const validRoutes = [
+    '/',
+    '/about',
+    '/products',
+    '/events',
+    '/products',
+    '/contact',
+    '/auth',
+    '/dashboard',
+    '/api'
+  ]
+
+  // Check if the current path is a valid route or a sub-route of valid routes
+  const isValidRoute = validRoutes.some(route => 
+    request.nextUrl.pathname === route || 
+    request.nextUrl.pathname.startsWith(route + '/')
+  )
+
+  // If the route is not valid and not a static file, redirect to home page
+  if (!isValidRoute && !request.nextUrl.pathname.startsWith('/_next') && !request.nextUrl.pathname.includes('.')) {
+    const redirectUrl = request.nextUrl.clone()
+    redirectUrl.pathname = '/'
+    return NextResponse.redirect(redirectUrl)
+  }
+
   // If user is not signed in and the current path is /dashboard, redirect to /auth/sign-in
   if (!user && request.nextUrl.pathname.startsWith('/dashboard')) {
     const redirectUrl = request.nextUrl.clone()
@@ -42,10 +68,11 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl)
   }
 
-  // If user is signed in and the current path is /auth, redirect to /dashboard/overview
+  // If user is signed in and the current path is /auth, redirect to /dashboard/profile
   if (user && request.nextUrl.pathname.startsWith('/auth')) {
     const redirectUrl = request.nextUrl.clone()
-    redirectUrl.pathname = '/dashboard/overview'
+    redirectUrl.pathname = '/dashboard/profile'
+
     return NextResponse.redirect(redirectUrl)
   }
 

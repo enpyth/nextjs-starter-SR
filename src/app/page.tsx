@@ -16,7 +16,7 @@ export default function HomePage() {
         showCTA={true}
       />
       <Introduction />
-      <Features />
+      {/* <Features /> */}
       <Stats />
       <Product />
       <Testimonials />
