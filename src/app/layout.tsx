@@ -10,6 +10,7 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import './globals.css';
 import './theme.css';
 import LayoutShell from '@/components/layout/layoutshell';
+import AppClient from '@/components/layout/AppClient';
 
 const META_THEME_COLORS = {
   light: '#ffffff',
@@ -66,10 +67,9 @@ export default async function RootLayout({
             disableTransitionOnChange
             enableColorScheme
           >
-            <Providers activeThemeValue={activeThemeValue as string}>
-              <Toaster />
+            <AppClient>
               <LayoutShell>{children}</LayoutShell>
-            </Providers>
+            </AppClient>
           </ThemeProvider>
         </NuqsAdapter>
       </body>
