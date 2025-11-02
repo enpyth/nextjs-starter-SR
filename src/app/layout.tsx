@@ -67,9 +67,11 @@ export default async function RootLayout({
             disableTransitionOnChange
             enableColorScheme
           >
-            <AppClient>
+            {/* <AppClient> */}
+            <Providers>
               <LayoutShell>{children}</LayoutShell>
-            </AppClient>
+            {/* // </AppClient> */}
+            </Providers>
           </ThemeProvider>
         </NuqsAdapter>
       </body>
