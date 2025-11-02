@@ -1,3 +1,4 @@
+"use client";
 import Hero from "@/features/home/hero"
 import Register from "@/components/form/register"
 

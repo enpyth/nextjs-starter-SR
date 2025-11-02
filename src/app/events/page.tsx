@@ -1,3 +1,4 @@
+"use client";
 import Hero from "@/features/home/hero"
 import EventsPage from "@/features/events/components/EventsPage"
 
