@@ -1,3 +1,4 @@
+"use client";
 import Hero from '@/features/home/hero'
 import ContactEmail from '@/components/form/contact-email'
 import { Container } from '@mui/material'
