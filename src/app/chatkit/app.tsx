@@ -24,7 +24,10 @@ export default function App() {
     <>
       <Script
         src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
+        onError={(e) => {
+          console.error("Failed to load ChatKit script", e);
+        }}
       />
       <main className="flex min-h-screen flex-col items-center justify-end bg-slate-100 dark:bg-slate-950">
         <div className="mx-auto w-full max-w-5xl">

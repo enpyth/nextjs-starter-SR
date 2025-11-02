@@ -1,5 +1,5 @@
 import App from "./app";
 
-export default function Home() {
+export default function ChatKitPage() {
   return <App />;
 }

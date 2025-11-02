@@ -23,7 +23,7 @@ export async function POST(request: Request): Promise<Response> {
   }
   let sessionCookie: string | null = null;
   try {
-    const openaiApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+    const openaiApiKey = process.env.OPENAI_API_KEY || process.env.NEXT_PUBLIC_OPENAI_API_KEY;
     if (!openaiApiKey) {
       return new Response(
         JSON.stringify({
