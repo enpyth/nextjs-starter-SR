@@ -1,6 +1,6 @@
 import { WORKFLOW_ID } from "@/config/chatkit";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 interface CreateSessionRequestBody {
   workflow?: { id?: string | null } | null;
