@@ -4,7 +4,7 @@ import CarouselCard from "@/components/carousel/card"
 const slides = [
   {
     id: 1,
-    image: "/about/intro1.jpg",
+    image: "/placeholder.jpg",
     title: "",
     contents: [
       "companyHistory1",
@@ -12,7 +12,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/about/intro2.jpg",
+    image: "/placeholder.jpg",
     title: "",
     contents: [
       "companyHistory2",
@@ -20,7 +20,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/about/intro3.jpg",
+    image: "/placeholder.jpg",
     title: "",
     contents: [
       "companyHistory3",
